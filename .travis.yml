@@ -7,7 +7,7 @@ services:
 
 before_install:
   - echo "start Creating an emage with dockerfile"
-  - docker build -t suljiwoo/docker-react-app ./
+  - docker build -t suljiwoo/docker-react-app -f Dockerfile.dev .
 
 script:
   - docker run -e CI=true suljiwoo/docker-react-app npm run test -- --coverage
